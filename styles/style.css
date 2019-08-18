@@ -1,0 +1,156 @@
+/**
+ * for the default settings
+ */
+
+:root {
+	--full-size: 100%;
+	--header-padding-bottom: 50px;
+	--footer-padding-top: 50px;
+	--row-padding-bottom: 20px;
+	--icon-zoom-factor: 1.2;
+	--color: #ddd;
+	--font-size: 16px;
+	--font-family: "Georgia";
+}
+
+/**
+ * for pages
+ */
+
+html, body {
+	width: var(--full-size);
+	height: var(--full-size);
+}
+
+#header {
+}
+
+#content {
+}
+
+#footer {
+	bottom: 0px;
+	position: fixed;
+	width: var(--full-size);
+	height: var(--footer-padding-top);
+	line-height: var(--footer-padding-top);
+}
+
+.bg {
+	font-family: var(--font-family);
+	font-size: var(--font-size);
+	color: var(--color);
+	background-repeat: repeat-x repeat-y;
+	background-image: url("../images/tile.jpg");
+}
+
+/**
+ * for page loader
+ */
+
+.loader {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	z-index: 1;
+	width: 150px;
+	height: 150px;
+	margin: -75px 0 0 -75px;
+	width: 120px;
+	height: 120px;
+	-webkit-animation: spin 2s linear infinite;
+	animation: spin 2s linear infinite;
+
+	border-radius: 50%;
+	border-top: 16px solid blue;
+	border-right: 16px solid green;
+	border-bottom: 16px solid red;
+	border-left: 16px solid pink;
+}
+
+.animate-bottom {
+	position: relative;
+	-webkit-animation-name: animatebottom;
+	-webkit-animation-duration: 1s;
+	animation-name: animatebottom;
+	animation-duration: 1s;
+}
+
+@-webkit-keyframes spin {
+	0% {
+		-webkit-transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@-webkit-keyframes animatebottom {
+	from {
+		bottom: -100px;
+		opacity: 0
+	}
+	to {
+		bottom: 0px;
+		opacity: 1;
+	}
+}
+
+@keyframes animatebottom {
+	from {
+		bottom: -100px;
+		opacity: 0;
+	}
+	to {
+		bottom: 0;
+		opacity: 1;
+	}
+}
+
+/**
+ * for icons
+ */
+
+.fa-fw {
+	font-size: 48px;
+	color: var(--color);
+	text-align: left;
+}
+
+.fa-fw:hover {
+	-moz-transform: scale(var(--icon-zoom-factor));
+	-webkit-transform: scale(var(--icon-zoom-factor));
+	-o-transform: scale(var(--icon-zoom-factor));
+	-ms-transform: scale(var(--icon-zoom-factor));
+	transform: scale(var(--icon-zoom-factor));
+}
+
+/**
+ * for others
+ */
+
+.height-100 {
+	height: var(--full-size);
+}
+
+.height-25 {
+	height: 25%;
+}
+
+.auto-fit {
+	width: auto;
+	height: auto;
+}
+
+.row.padding-bottom {
+	padding-bottom: var(--row-padding-bottom);
+}

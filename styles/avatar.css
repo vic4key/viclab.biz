@@ -1,0 +1,58 @@
+/**
+ * https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_flip_card
+ */
+
+:root {
+  --avatar-size: 200px;
+}
+
+img .img-thumbnail-avatar {
+  width:  var(--avatar-size)
+  height: var(--avatar-size);
+}
+
+.img-thumbnail-avatar {
+  padding: 2px;
+  border: 1px solid var(--color) !important;
+  background-color: 1px solid var(--color) !important;
+}
+
+.flip-card {
+  background-color: transparent;
+  width:  var(--avatar-size);
+  height: var(--avatar-size);
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-image: url("../images/tile.jpg");
+  color: black;
+}
+
+.flip-card-back {
+  background-image: url("../images/tile.jpg");
+  color: var(--color);
+  transform: rotateY(180deg);
+  border: 1px solid var(--color);
+  text-align: center;
+}

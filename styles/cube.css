@@ -1,0 +1,127 @@
+/**
+ * https://www.codicode.com/art/animated_3d_css_cube.aspx
+ */
+
+:root {
+	--width: 100%;
+	--height: 200px;
+	--font-size: 13px;
+	--font-family: "Georgia";
+	--cube-size: 100px;
+	--cube-opacity: 0.5;
+	--cube-border: solid 0px #fff;
+	--cube-surface-color: #fff;
+	--cube-surface-bg-color: #000;
+	--cube-surface-text-padding: 10px;
+	--cube-ani-rot-duration: 10s;
+	--cube-ani-zoom-duration: 0.2s;
+	--cube-translate-offset: calc(var(--cube-size) / 2);
+	--cube-zoom-offset: calc(var(--cube-size) / 2);
+}
+
+@keyframes bganim {
+	from {
+		background-position: 0px;
+	}
+
+	to {
+		background-position: 80px;
+	}
+}
+
+.wrap {
+	perspective: 1000px;
+    align-items: center;
+	display: flex;
+	width: var(--width);
+	height: var(--height);
+}
+
+.cube {
+	margin: auto;
+	position: relative;
+	height: var(--cube-size);
+	width: var(--cube-size);
+	transform-style: preserve-3d;
+}
+
+.cube div {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	padding: var(--cube-surface-text-padding);
+	box-sizing: border-box;
+	opacity: var(--cube-opacity);
+	background-color: var(--cube-surface-bg-color);
+	border: var(--cube-border);
+	color: var(--cube-surface-color);
+	font-size: var(--font-size);
+	font-family: var(--font-family);
+	transition: transform var(--cube-ani-zoom-duration) ease-in;
+}
+
+.front {
+	transform: translateZ(var(--cube-translate-offset));
+}
+
+.back {
+	transform: translateZ(calc(0px - var(--cube-translate-offset))) rotateY(180deg);
+}
+
+.right {
+	transform: rotateY(-270deg) translateX(var(--cube-translate-offset));
+	transform-origin: top right;
+}
+
+.left {
+	transform: rotateY(270deg) translateX(calc(0px - var(--cube-translate-offset)));
+	transform-origin: center left;
+}
+
+.top {
+	transform: rotateX(-270deg) translateY(calc(0px - var(--cube-translate-offset)));
+	transform-origin: top center;
+}
+
+.bottom {
+	transform: rotateX(270deg) translateY(var(--cube-translate-offset));
+	transform-origin: bottom center;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+
+  to {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
+.cube {
+	animation: rotate var(--cube-ani-rot-duration) infinite linear;
+}
+
+.wrap:hover .front {
+	transform: translateZ(var(--cube-size));
+}
+
+.wrap:hover .back {
+	transform: translateZ(calc(0px - var(--cube-size))) rotateY(180deg);
+}
+
+.wrap:hover .right {
+	transform: rotateY(-270deg) translateZ(var(--cube-zoom-offset)) translateX(var(--cube-zoom-offset));
+}
+
+.wrap:hover .left {
+	transform: rotateY(270deg) translateZ(var(--cube-zoom-offset)) translateX(calc(0px - var(--cube-zoom-offset)));
+}
+
+.wrap:hover .top {
+	transform: rotateX(-270deg) translateZ(var(--cube-zoom-offset)) translateY(calc(0px - var(--cube-zoom-offset)));
+}
+
+.wrap:hover .bottom {
+	transform: rotateX(270deg) translateZ(var(--cube-zoom-offset)) translateY(var(--cube-zoom-offset));
+}
