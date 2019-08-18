@@ -42,7 +42,7 @@
 	<link rel="stylesheet" type="text/css" href="styles/cube.css">
 </head>
 
-<body class="bg height-100"> <!-- onload="(function(){sleep(1000)}).call(this)" -->
+<body class="bg height-100"><!-- onload="(function(){sleep(1000)}).call(this)" -->
 
 	<div class="loader"></div>
 
@@ -75,34 +75,8 @@
 
 		<div class="row padding-bottom">
 			<div class="col-sm-3"></div>
-			<div class="col-sm-3 auto-fit">
-				<div id="avatar" class="flip-card">
-					<div class="flip-card-inner">
-						<div class="flip-card-front">
-							<img class="img-thumbnail img-thumbnail-avatar" src="<?php echo $GLOBALS["avatar"]; ?>">
-						</div>
-						<div class="flip-card-back">
-							<h1><?php echo $GLOBALS["author"]; ?></h1>
-							<p>Software Engineer</p>
-							<p>Software Security</p>
-							<p>Reverse Engineer</p>
-							<p>Web Developer</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-3">
-				<div class="wrap">
-					<div class="cube">
-						<div class="front"><span>Windows<br>Linux<br>Android</span></div>
-						<div class="back"><span>C++<br>Python<br>PHP<br>JS</span></div>
-						<div class="top"><span>IDA<br>OllyDbg<br>WinDbg<br>dnSpy</span></div>
-						<div class="bottom"><span>MS VS<br>MS VS Code<br>Sublime Text</span></div>
-						<div class="left"><span>SVN Server<br>Tortoise SVN<br>Tortoise Git</span></div>
-						<div class="right"><span>Open CV<br>Open GL<br>jQuery<br>Boostrap</span></div>
-					</div>
-				</div>
-			</div>
+			<div class="col-sm-3 auto-fit"><?php require_once("imports/avatar.php"); ?></div>
+			<div class="col-sm-3"><?php require_once("imports/cube.php"); ?></div>
 			<div class="col-sm-3"></div>
 		</div>
 
@@ -122,26 +96,7 @@
 				<div class="text-left">
 					<h4>These are mostly fundamental information or tutorials for sharing.</h4>
 					<h4>I hope you find what you are looking for here.</h4>
-					<h4>
-						<?php
-							try
-							{
-								$jdata = ICloudFlare::Instance()->QueryVisitors(CF_UV_MONTH);
-								jassert($jdata);
-								printf("In the last %s, total %d visitors, at most %d and at least %d visitors per %s.",
-									$jdata->unit_time,
-									$jdata->total_visitors,
-									$jdata->max_visitors,
-									$jdata->min_visitors,
-									$jdata->per_time
-								);
-							}
-							catch(Exception $exception)
-							{
-								// the exception code handling here
-							}
-						?>
-					</h4>
+					<h4><?php require_once("imports/visitor.php"); ?></h4>
 				</div>
 			</div>
 			<div class="col-sm-3"></div>
@@ -149,57 +104,22 @@
 
 		<div class="row padding-bottom">
 			<div class="col-sm-3"></div>
-			<div class="col-sm-6">
-				<a target="_blank" data-toggle="tooltip" title="Blog" href="<?php echo "http://blog.".$GLOBALS["domain"]; ?>">
-					<i id="link1" class="fa fa-rss-square fa-fw"></i>
-				</a>
-
-				<a target="_blank" data-toggle="tooltip" title="GitHub" href="<?php echo "https://github.com/".$GLOBALS["user"]; ?>">
-					<i class="fa fa-github-square fa-fw"></i>
-				</a>
-
-				<a target="_blank" data-toggle="tooltip" title="Twitter" href="<?php echo "https://twitter.com/".$GLOBALS["user"]; ?>">
-					<i class="fa fa-twitter-square fa-fw"></i>
-				</a>
-
-				<a target="_blank" data-toggle="tooltip" title="Youtube" href="https://www.youtube.com/channel/UCa6sreb--oyg1LHC2LQQxPg">
-					<i class="fa fa-youtube-square fa-fw"></i>
-				</a>
-
-				<a target="_self" data-toggle="tooltip" title="Email" href="<?php echo "mailto:".$GLOBALS["email"]; ?>">
-					<i class="fa fa-envelope fa-fw"></i>
-				</a>
-			</div>
+			<div class="col-sm-6"><?php require_once("imports/social.php"); ?></div>
 			<div class="col-sm-3"></div>
 		</div>
 
-		<div class="row padding-bottom">
+		<div class="row padding-bottom"><!-- padding for dynamic footer -->
 			<div class="col-sm-3"></div>
 			<div class="col-sm-6"></div>
 			<div class="col-sm-3"></div>
 		</div>
 	</div>
 
-	<div id="footer" class="container text-center">
-		<div class="row">
-			<span class="text-muted"><?php echo "Copyright © {$GLOBALS["author"]} 2014 - {$GLOBALS["year"]}" ?></span>
-		</div>
+	<div id="footer" class="container">
+		<div class="row"><?php require_once("imports/footer.php"); ?></div>
 	</div>
 
-	<div class="modal fade" id="md_modal" role="dialog">
-		<div class="modal-dialog">
-			<div class="modal-content bg">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">Modal Header</h4>
-				</div>
-				<div class="modal-body">Modal Content</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				</div>
-			</div>
-		</div>
-	</div>
+	<?php require_once("imports/about.php"); ?>
 
 	<script type="text/javascript" src="libraries/jQuery-3.1.1/jquery-3.1.1.min.js"></script>
 
