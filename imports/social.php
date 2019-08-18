@@ -15,5 +15,5 @@
 </a>
 
 <a target="_self" data-toggle="tooltip" title="Email" href="<?php echo "mailto:".$GLOBALS["email"]; ?>">
-	<i class="fa fa-envelope fa-fw"></i>
+	<i class="fa fa-envelope-square fa-fw"></i>
 </a>
