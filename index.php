@@ -11,7 +11,7 @@
 	 *
 	 * https://fontawesome.com/icons?d=gallery
 	 */
-	require_once("cloudflare.interface.php");
+	require_once("phps/cloudflare.interface.php");
 ?>
 
 <html>
