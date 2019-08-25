@@ -43,7 +43,7 @@
 	<link rel="stylesheet" type="text/css" href="styles/cube.css">
 </head>
 
-<body class="bg height-100" onload="(function(){sleep(1000)}).call(this)"><!-- onload="(function(){sleep(1000)}).call(this)" -->
+<body class="bg height-100"><!-- onload="(function(){sleep(1000)}).call(this)" -->
 
 	<div id="loader"></div>
 

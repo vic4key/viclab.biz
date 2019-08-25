@@ -90,6 +90,10 @@ html, body {
 	padding-bottom: var(--row-padding-bottom);
 }
 
+.navbar {
+	margin-bottom: 0px;
+}
+
 ul.navbar-nav > li:hover {
-	background-color: #111;
+	background-color: #222;
 }
