@@ -8,7 +8,7 @@
 				<span class="icon-bar"></span>
 			</button>
 			<a class="navbar-brand" href="<?php echo $GLOBALS["base"]; ?>">
-				<i class="fa fa-gg fa-lg" aria-hidden="true"></i>
+				<i class="fa fa-gg fa-lg fa-light" aria-hidden="true"></i>
 			</a>
 		</div>
 		<div id="navbar" class="collapse navbar-collapse">
@@ -25,7 +25,7 @@
 				</li>
 				<li>
 					<a target="_blank" href="<?php echo "https://github.com/{$GLOBALS["user"]}/{$GLOBALS["domain"]}/"; ?>">
-						<i class="fa fa-star-o fa-lg" aria-hidden="true"></i>
+						<i class="fa fa-download fa-lg" aria-hidden="true"></i>
 					</a>
 				</li>
 			</ul>

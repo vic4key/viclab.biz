@@ -43,7 +43,7 @@
 	<link rel="stylesheet" type="text/css" href="styles/cube.css">
 </head>
 
-<body class="bg height-100"><!-- onload="(function(){sleep(1000)}).call(this)" -->
+<body class="bg"><!-- onload="(function(){sleep(1000)}).call(this)" -->
 
 	<div id="loader"></div>
 
@@ -55,8 +55,20 @@
 		<?php require_once("imports/navbar.php"); ?>
 	</div>
 
-	<div id="content" class="container height-100">
-		<div class="row height-25"></div>
+	<div id="content" class="container">
+		<div class="row padding-bottom" style="padding-top: 100px">
+			<div class="col-sm-3"></div>
+			<div class="col-sm-6">
+				<div class="alert alert-success alert-dismissible">
+					<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+					<h4 class="alert-heading"><strong>I'd like to say that</strong></h4>
+					<span>
+						<?php echo "In the next month Sep~Oct I will move the website to <a href=\"https://vic.onl/\" class=\"alert-link\">Vic Online https://vic.onl/</a>"; ?>
+					</span>
+				</div>
+			</div>
+			<div class="col-sm-3"></div>
+		</div>
 
 		<div class="row padding-bottom">
 			<div class="col-sm-3"></div>
@@ -69,7 +81,7 @@
 			<div class="col-sm-3"></div>
 			<div class="col-sm-6">
 				<div class="text-left">
-					<span style="font-size: 25px">Hi. I'm Vic P. Welcome to the geek' blog.</span>
+					<span style="font-size: 25px">Hi. I'm Vic P. Welcome to the geek' website.</span>
 				</div>
 			</div>
 			<div class="col-sm-1"></div>

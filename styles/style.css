@@ -6,6 +6,7 @@
 	--full-size: 100%;
 	--header-height: auto;
 	--footer-height: 50px;
+	--navbar-height: 50px;
 	--row-padding-bottom: 20px;
 	--icon-zoom-factor: 1.2;
 	--color: #ddd;
@@ -28,10 +29,12 @@ html, body {
 
 #navibar {
 	display: none;
+	height: var(--navbar-height);
 }
 
 #content {
 	display: none;
+	margin-top: calc(var(--header-height) + var(--navbar-height));
 }
 
 #footer {
@@ -55,6 +58,10 @@ html, body {
  * for icons
  */
 
+.fa-light {
+	color: #fff;
+}
+
 .fa-fw {
 	font-size: 48px;
 	color: var(--color);
@@ -72,14 +79,6 @@ html, body {
 /**
  * for others
  */
-
-.height-100 {
-	height: var(--full-size);
-}
-
-.height-25 {
-	height: 25%;
-}
 
 .auto-fit {
 	width: auto;
