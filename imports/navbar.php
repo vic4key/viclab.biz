@@ -24,7 +24,7 @@
 					</a>
 				</li>
 				<li>
-					<a target="_blank" href="<?php echo "https://github.com/".$GLOBALS["user"]."/".$GLOBALS["domain"]; ?>">
+					<a target="_blank" href="<?php echo "https://github.com/{$GLOBALS["user"]}/{$GLOBALS["domain"]}/"; ?>">
 						<i class="fa fa-star-o fa-lg" aria-hidden="true"></i>
 					</a>
 				</li>
