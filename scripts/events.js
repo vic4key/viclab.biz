@@ -11,11 +11,6 @@ $(document).ready(function()
 	footer();
 });
 
-$(window).on("load", function()
-{
-	$(".loader").hide();
-});
-
 $(window).on("resize", function()
 {
 	footer();

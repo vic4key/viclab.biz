@@ -9,7 +9,7 @@
 	 *
 	 * https://fonts.google.com/
 	 *
-	 * https://fontawesome.com/icons?d=gallery
+	 * https://fontawesome.com/icons?d=gallery&m=free
 	 */
 	require_once("phps/cloudflare.interface.php");
 ?>
@@ -38,18 +38,21 @@
 	<link rel="stylesheet" type="text/css" href="libraries/Font-Awesome-4.7.0/css/font-awesome.min.css">
 
 	<link rel="stylesheet" type="text/css" href="styles/style.css">
+	<link rel="stylesheet" type="text/css" href="styles/loader.css">
 	<link rel="stylesheet" type="text/css" href="styles/avatar.css">
 	<link rel="stylesheet" type="text/css" href="styles/cube.css">
 </head>
 
-<body class="bg height-100"><!-- onload="(function(){sleep(1000)}).call(this)" -->
+<body class="bg height-100" onload="(function(){sleep(1000)}).call(this)"><!-- onload="(function(){sleep(1000)}).call(this)" -->
 
-	<div class="loader"></div>
-
-	<?php require_once("imports/navbar.php"); ?>
+	<div id="loader"></div>
 
 	<div id="header" class="container">
 		<div class="row"></div>
+	</div>
+
+	<div id="navibar">
+		<?php require_once("imports/navbar.php"); ?>
 	</div>
 
 	<div id="content" class="container height-100">
@@ -109,6 +112,8 @@
 
 	<script type="text/javascript" src="scripts/misc.js"></script>
 	<script type="text/javascript" src="scripts/events.js"></script>
+	<script type="text/javascript" src="scripts/loader.js"></script>
+	<script type="text/javascript" src="scripts/cube.js"></script>
 
 </body>
 
