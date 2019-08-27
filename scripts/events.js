@@ -1,5 +1,7 @@
 $(document).ready(function()
 {
+	$("[data-tooltip]:not([data-tooltip=\"\"])").darkTooltip();
+
 	$("#mn_about").click(function()
 	{
 		var about_header  = $(this).text();
