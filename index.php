@@ -107,11 +107,7 @@
 			<div class="col-sm-3"></div>
 		</div>
 
-		<div class="row padding-bottom"><!-- padding for dynamic footer -->
-			<div class="col-sm-3"></div>
-			<div class="col-sm-6"></div>
-			<div class="col-sm-3"></div>
-		</div>
+		<div class="row padding-bottom"></div><!-- padding for dynamic footer -->
 	</div>
 
 	<div id="footer" class="container">
