@@ -83,7 +83,7 @@
 			<div class="col-sm-3"></div>
 			<div class="col-sm-6">
 				<div class="text-left">
-					<span style="font-size: 25px">Hi. I'm Vic P. Welcome to the geek' website.</span>
+					<span style="font-size: 25px"><?php echo "Hi. I'm {$GLOBALS["author"]} Welcome to the geek' website."; ?></span>
 				</div>
 			</div>
 			<div class="col-sm-1"></div>
