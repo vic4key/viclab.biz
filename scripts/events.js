@@ -1,6 +1,6 @@
 $(document).ready(function()
 {
-	$("[data-tooltip]:not([data-tooltip=\"\"])").darkTooltip();
+	/*$("[data-tooltip]:not([data-tooltip=\"\"])").darkTooltip();*/
 
 	$("#mn_about").click(function()
 	{
@@ -9,7 +9,10 @@ $(document).ready(function()
 		$("#md_modal > .modal-dialog > .modal-content > .modal-header > .modal-title").text(about_header);
 		$("#md_modal > .modal-dialog > .modal-content > .modal-body").html(about_content);
 	});
+});
 
+$(window).on("load", function()
+{
 	footer();
 });
 
