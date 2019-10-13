@@ -1,1 +1,1 @@
-Vic Lab - http://viclab.biz/
+Vic Lab - http://viclab.biz/ (Moved to Vic Online - http://vic.onl/)
