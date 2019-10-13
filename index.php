@@ -61,13 +61,13 @@
 		<div class="row padding-bottom" style="padding-top: 100px">
 			<div class="col-sm-3"></div>
 			<div class="col-sm-6">
-				<div class="alert alert-success alert-dismissible">
+				<!-- <div class="alert alert-success alert-dismissible">
 					<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 					<h4 class="alert-heading"><strong>I'd like to say that</strong></h4>
 					<span>
-						<?php echo "In the next month Sep~Oct I will move the website to <a href=\"https://vic.onl/\" class=\"alert-link\">Vic Online https://vic.onl/</a>"; ?>
+						<?php # echo "In the next month Sep~Oct I will move the website to <a href=\"https://vic.onl/\" class=\"alert-link\">Vic Online https://vic.onl/</a>"; ?>
 					</span>
-				</div>
+				</div> -->
 			</div>
 			<div class="col-sm-3"></div>
 		</div>
