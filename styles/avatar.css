@@ -45,12 +45,12 @@ img .img-thumbnail-avatar {
 }
 
 .flip-card-front {
-  background-image: url("../images/tile.jpg");
+  background-image: url("../images/tile.png");
   color: black;
 }
 
 .flip-card-back {
-  background-image: url("../images/tile.jpg");
+  background-image: url("../images/tile.png");
   color: var(--color);
   transform: rotateY(180deg);
   border: 1px solid var(--color);
