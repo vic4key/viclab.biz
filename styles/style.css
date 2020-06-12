@@ -64,6 +64,7 @@ html, body {
 
 .fa-fw {
 	font-size: 48px;
+	width: 1.0em !important;
 	color: var(--color);
 	text-align: left;
 }

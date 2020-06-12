@@ -14,6 +14,10 @@
 	<i class="fa fa-youtube-square fa-fw"></i>
 </a>
 
+<a target="_blank" data-tooltip="SoundCloud" href="<?php echo "https://soundcloud.com/{$GLOBALS["user"]}/"; ?>">
+	<i class="fa fa-caret-square-o-left fa-fw"></i>
+</a>
+
 <a target="_self" data-tooltip="Email" href="<?php echo "mailto:{$GLOBALS["email"]}"; ?>">
 	<i class="fa fa-envelope-square fa-fw"></i>
 </a>
