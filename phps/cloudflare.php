@@ -25,6 +25,11 @@ class CloudFlare
 	private $m_ZoneID = "";
 	private $m_Headers  = [];
 
+	public function ZoneID()
+	{
+		return $this->m_ZoneID;
+	}
+
 	public function __construct()
 	{
 		$this->m_Host = "api.cloudflare.com";
@@ -65,10 +70,11 @@ class CloudFlare
 	 * Requests an URI (HTTP & HTTPS).
 	 * @param	string	$method		The method.
 	 * @param	string	$uri			The URI.
+	 * @param	string	$fnopt		The option callback function.
 	 * @param	number	$timeout	The time-out.
 	 * @return json		The response data.
 	 */
-	public function Request($method, $uri, $timeout = 5)
+	public function Request($method, $uri, $fnopt = null, $timeout = 5)
 	{
 		# https://incarnate.github.io/curl-to-php/
 
@@ -83,7 +89,14 @@ class CloudFlare
 		curl_setopt($curl, CURLOPT_CUSTOMREQUEST, $method);
 		curl_setopt($curl, CURLOPT_HTTPHEADER, $this->m_Headers);
 
+		if ($fnopt && is_callable($fnopt))
+		{
+			$fnopt($curl);
+		}
+
 		$data = curl_exec($curl);
+
+		curl_setopt($curl, CURLOPT_POSTFIELDS, "");
 
 		curl_close($curl);
 
@@ -129,13 +142,12 @@ class CloudFlare
 	}
 
 	/**
-	 * Requests an object.
-	 * @param	string	$method	The method.
+	 * Gets an object.
 	 * @param	string	$path		The object path.
 	 * @param	array		$args		The time-out.
-	 * @return json		The response data.
+	 * @return json		The object data.
 	 */
-	public function RequestObject($method, $path, $args)
+	public function GetObject($path, $args)
 	{
 		if (strlen($this->m_ZoneID) == 0)
 		{
@@ -151,18 +163,25 @@ class CloudFlare
 			$uri .= http_build_query($args);
 		}
 
-		return $this->Request($method, $uri);
+		return $this->Request("GET", $uri);
 	}
 
-	/**
-	 * Gets an object.
-	 * @param	string	$path		The object path.
-	 * @param	array		$args		The time-out.
-	 * @return json		The object data.
-	 */
-	public function GetObject($path, $args)
+	public function GetGQLObject($args)
 	{
-		return $this->RequestObject("GET", $path, $args);
+		if (strlen($this->m_ZoneID) == 0)
+		{
+			return a2j(array());
+		}
+
+		$uri  = $this->m_Endpoint;
+		$uri .= "graphql";
+
+		$result = $this->Request("POST", $uri, function(&$curl) use($args)
+		{
+			curl_setopt($curl, CURLOPT_POSTFIELDS, $args);
+		});
+
+		return $result;
 	}
 }
 
